@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="iwonderland - App portfolio">
+<meta name="i18n-title" content="home_title">
+<title>iwonderland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* 产品集合网格 */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-6);
+  margin-top: var(--sp-10);
+}
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--dur) var(--ease);
+  display: block;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+  text-decoration: none;
+}
+.app-card .app-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  margin-bottom: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+}
+.app-card h3 { font-size: 20px; margin-bottom: var(--sp-3); color: var(--text); }
+.app-card p { color: var(--text-dim); font-size: 15px; }
+.app-card .arrow { color: var(--brand); font-weight: 700; margin-top: var(--sp-4); display: inline-block; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span>iwonderland</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://github.com/iwonderland" target="_blank" data-i18n="nav_github">GitHub</a>
+    </div>
+    <div class="lang-switcher" aria-label="Language">
+      <button data-lang-btn="zh">中文</button>
+      <button data-lang-btn="ja">日本語</button>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1 style="font-size:clamp(30px,5vw,44px)">iwonderland</h1>
+    <p class="sub">Handcrafted apps for creators.</p>
+  </div>
+</header>
+
+<section class="features">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-i18n="home_apps">我们的 App</h2>
+    </div>
+    <div class="apps-grid">
+      <a href="speechprompter/index.html" class="app-card">
+        <img src="assets/img/logo.png" alt="SpeechPrompter" class="app-icon">
+        <h3>SpeechPrompter</h3>
+        <p data-i18n="home_card_desc">AI 语音跟随提词器，全屏与悬浮双模式。</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="nav-brand"><span>iwonderland</span></div>
+    <div class="footer-copy">© 2026 iwonderland</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

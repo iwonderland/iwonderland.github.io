@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SpeechPrompter - AI voice-follow teleprompter">
+<meta name="i18n-title" content="page_title_main">
+<title>SpeechPrompter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="../assets/img/logo.png" alt="logo">
+      <span>SpeechPrompter</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features" data-i18n="nav_home">首页</a>
+      <a href="terms.html" data-i18n="nav_terms">用户协议</a>
+      <a href="privacy.html" data-i18n="nav_privacy">隐私政策</a>
+    </div>
+    <div class="lang-switcher" aria-label="Language">
+      <button data-lang-btn="zh">中文</button>
+      <button data-lang-btn="ja">日本語</button>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="container">
+    <img src="../assets/img/logo.png" alt="App icon" class="hero-app-icon">
+    <div class="hero-badge" data-i18n="hero_badge">AI 语音跟随提词器</div>
+    <h1><span data-i18n="hero_title1">让文字跟着</span><br><span data-i18n="hero_title2">你的声音走</span></h1>
+    <p class="sub" data-i18n="hero_sub">全屏与悬浮双模式，AI 语音识别让脚本自动滚动。悬浮小窗可覆盖在任意 App 之上，拍摄、直播、演讲都能一遍过。</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="window.open('https://apps.apple.com','_blank')" data-i18n="hero_cta_main">下载 App</button>
+      <a class="btn btn-outline" href="terms.html" data-i18n="hero_cta_secondary">查看协议</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 特性 ===== -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="feat_eyebrow">核心功能</div>
+      <h2 data-i18n="feat_title">为内容创作而生</h2>
+      <p data-i18n="feat_sub">从拍摄到直播，一个提词器满足所有场景。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v10"/><path d="M8 7c0 4 8 4 8 0"/><rect x="4" y="13" width="16" height="8" rx="4"/></svg></div>
+        <h3 data-i18n="feat1_title">AI 语音跟随</h3>
+        <p data-i18n="feat1_desc">识别你的语速，脚本自动滚动，不用手动调整速度。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="8" width="12" height="10" rx="2"/><path d="M12 8V6"/></svg></div>
+        <h3 data-i18n="feat2_title">悬浮任意 App</h3>
+        <p data-i18n="feat2_desc">悬浮小窗覆盖在其他 App 之上，直播软件、聊天窗口都不耽误。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 10l-2 2 2 2"/><path d="M16 10l2 2-2 2"/></svg></div>
+        <h3 data-i18n="feat3_title">全屏与浮窗双模式</h3>
+        <p data-i18n="feat3_desc">正式拍摄用全屏，日常使用用悬浮，一键切换。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" opacity=".4"/></svg></div>
+        <h3 data-i18n="feat4_title">多色文字</h3>
+        <p data-i18n="feat4_desc">暖黄、淡蓝等阅读舒适的颜色，适配不同光线。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3 data-i18n="feat5_title">倒计时准备</h3>
+        <p data-i18n="feat5_desc">3 秒倒计时，让你从容起势，开场更自然。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/></svg></div>
+        <h3 data-i18n="feat6_title">三语支持</h3>
+        <p data-i18n="feat6_desc">日文、中文、英文界面，随系统语言自动切换。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 对比 ===== -->
+<section class="compare">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="compare_eyebrow">免费 vs Pro</div>
+      <h2 data-i18n="compare_title">解锁全部能力</h2>
+    </div>
+    <div class="compare-table">
+      <table>
+        <tr>
+          <th style="width:40%"></th>
+          <th data-i18n="compare_free">免费版</th>
+          <th class="pro-col" data-i18n="compare_pro">Pro</th>
+        </tr>
+        <tr>
+          <td data-i18n="cmp_scripts">脚本数量</td>
+          <td data-i18n="cmp_free2">2 个</td>
+          <td class="pro-col check" data-i18n="cmp_pro_x">无限</td>
+        </tr>
+        <tr>
+          <td data-i18n="cmp_words">单篇字数</td>
+          <td data-i18n="cmp_free500">500 字</td>
+          <td class="pro-col check" data-i18n="cmp_pro_x">无限</td>
+        </tr>
+        <tr>
+          <td data-i18n="cmp_ai">AI 语音跟随</td>
+          <td class="x">✕</td>
+          <td class="pro-col check">✓</td>
+        </tr>
+        <tr>
+          <td data-i18n="cmp_color">多色文字</td>
+          <td class="x">✕</td>
+          <td class="pro-col check">✓</td>
+        </tr>
+        <tr>
+          <td data-i18n="cmp_countdown">倒计时档位</td>
+          <td data-i18n="cmp_free3s">3 秒</td>
+          <td class="pro-col check" data-i18n="cmp_pro_all">全部</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="nav-brand">
+      <img src="../assets/img/logo.png" alt="logo">
+      <span>SpeechPrompter</span>
+    </div>
+    <div class="footer-links">
+      <a href="terms.html" data-i18n="nav_terms">用户协议</a>
+      <a href="privacy.html" data-i18n="nav_privacy">隐私政策</a>
+    </div>
+    <div class="footer-copy">© 2026 <span data-i18n="footer_tag">AI 语音跟随提词器</span></div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

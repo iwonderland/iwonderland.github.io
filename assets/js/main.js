@@ -125,7 +125,7 @@
     privacy_s11_title: { zh: '11. 政策变更', ja: '11. ポリシーの変更', en: '11. Changes to This Policy' },
     privacy_s11_body: { zh: '我们可能不时更新本隐私政策。如有重大变更，我们将在应用内通知您。更新后的政策将在本页发布，并注明更新日期。', ja: '当方は本プライバシーポリシーを随時更新することがあります。重要な変更がある場合はアプリ内でお知らせします。更新後のポリシーは本ページに掲載され、更新日が記載されます。', en: 'We may update this Privacy Policy from time to time. If there are material changes, we will notify you in-app. The updated policy will be posted on this page with its revision date.' },
     privacy_s12_title: { zh: '12. 联系我们', ja: '12. お問い合わせ', en: '12. Contact Us' },
-    privacy_s12_body: { zh: '如对本隐私政策有任何疑问，请通过 GitHub 与我们联系：https://github.com/iwonderland', ja: '本プライバシーポリシーについてご質問がある場合は、GitHubからお問い合わせください：https://github.com/iwonderland', en: 'If you have any questions about this policy, please contact us via GitHub: https://github.com/iwonderland' },
+    privacy_s12_body: { zh: '如对本隐私政策有任何疑问，请联系我们：app-feedback-2026@outlook.com，或通过 GitHub：https://github.com/iwonderland', ja: '本プライバシーポリシーについてご質問がある場合は、app-feedback-2026@outlook.com または GitHub（https://github.com/iwonderland）までお問い合わせください。', en: 'If you have any questions about this policy, please contact us at app-feedback-2026@outlook.com or via GitHub: https://github.com/iwonderland' },
   };
 
   // 支持的语言

@@ -10,67 +10,118 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* ===== iwonderland 官网集合 · 独立视觉 =====
-   深空调集合页，与各 App 自身页面配色互不影响 */
+/* ============================================================
+   iwonderland 官网集合 · 多彩绚丽集合页
+   浅底 + 彩色光斑 + 玻璃卡片；每个 App 卡片用专属渐变色
+   ============================================================ */
 :root {
-  --bg: #0E0F13;
-  --panel: #17181E;
-  --panel-2: #1E2028;
-  --line: rgba(255,255,255,.08);
-  --text: #F0EDE6;
-  --dim: #9A968E;
-  --accent: #B9A06A;   /* 暖金，集合站专属 */
-  --radius: 18px;
+  --text: #2A2438;
+  --dim: #6B6478;
+  --ink: #211C2E;
   --font-body: 'Inter','Noto Sans SC','Noto Sans JP',system-ui,-apple-system,sans-serif;
   --font-display: 'Space Grotesk','Inter',system-ui,sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-.container { width: min(1080px, 92%); margin-inline: auto; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(760px 480px at 12% 12%, rgba(253,230,138,.55), transparent 60%),
+    radial-gradient(820px 560px at 88% 8%, rgba(240,171,252,.5), transparent 62%),
+    radial-gradient(900px 620px at 80% 85%, rgba(165,243,252,.6), transparent 60%),
+    radial-gradient(700px 500px at 8% 88%, rgba(254,215,170,.55), transparent 60%),
+    linear-gradient(160deg, #FFF4E0 0%, #EAF2FF 34%, #F6E7FF 68%, #E6FBF7 100%);
+  background-attachment: fixed;
+}
+body::before { /* 细网格，科技感 */
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(90,60,140,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,60,140,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+}
+.container { position: relative; z-index: 1; width: min(1080px, 92%); margin-inline: auto; }
 a { color: inherit; }
 
-/* 导航 */
-.nav { position: sticky; top: 0; z-index: 20; background: rgba(14,15,19,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+/* ===== 导航 ===== */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.55); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(120,100,170,.14); }
 .nav-inner { display: flex; align-items: center; gap: 18px; padding: 13px 0; flex-wrap: wrap; }
-.nav-brand { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: .2px; text-decoration: none; }
+.nav-brand {
+  font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -.2px;
+  background: linear-gradient(90deg, #FF6B6B, #8B5CF6, #0EA5E9);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 .nav-links { margin-left: auto; }
 .nav-links a { color: var(--dim); text-decoration: none; font-size: 14px; }
-.nav-links a:hover { color: var(--text); }
-.lang-switcher { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+.nav-links a:hover { color: var(--ink); }
+.lang-switcher { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid rgba(120,100,170,.22); border-radius: 999px; background: rgba(255,255,255,.7); }
 .lang-switcher button { border: 0; background: transparent; color: var(--dim); font-size: 12.5px; padding: 5px 11px; border-radius: 999px; cursor: pointer; font-family: var(--font-body); }
-.lang-switcher button.active { background: var(--accent); color: #171309; }
-
-/* Hero */
-.hero { text-align: center; padding: 88px 0 64px; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(34px, 6vw, 54px); letter-spacing: -.5px; }
-.hero .sub { margin-top: 14px; color: var(--dim); font-size: 16px; }
-
-/* 我们的 App */
-.section-title { margin-bottom: 30px; }
-.section-title h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); letter-spacing: -.3px; }
-.apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
-.app-card {
-  display: flex; flex-direction: column;
-  background: linear-gradient(180deg, var(--panel), var(--panel-2));
-  border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 26px; text-decoration: none;
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+.lang-switcher button.active {
+  color: #fff;
+  background: linear-gradient(90deg, #6366F1, #D946EF);
+  box-shadow: 0 4px 12px rgba(160,110,250,.35);
 }
-.app-card:hover { transform: translateY(-4px); border-color: rgba(185,160,106,.45); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
-.app-card .app-icon { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 18px; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
-.app-card h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -.2px; }
-.app-card p { color: var(--dim); font-size: 14.5px; margin-top: 6px; }
-.app-card .arrow { margin-top: auto; padding-top: 16px; color: var(--accent); font-weight: 700; }
 
-/* 页脚 */
-.footer { border-top: 1px solid var(--line); margin-top: 72px; padding: 28px 0; }
+/* ===== Hero ===== */
+.hero { text-align: center; padding: 84px 0 46px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 68px); letter-spacing: -1.5px; line-height: 1.05;
+  background: linear-gradient(100deg, #F43F5E 0%, #A855F7 38%, #2563EB 76%, #0891B2 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 6px 24px rgba(168,85,247,.22));
+}
+.hero .sub { margin-top: 16px; color: var(--dim); font-size: 17px; }
+.hero .sparkle { margin-top: 22px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.chip {
+  font-size: 13px; font-weight: 600; color: #4B3B6F; padding: 7px 15px; border-radius: 999px;
+  background: rgba(255,255,255,.7); border: 1px solid rgba(120,100,170,.18);
+  box-shadow: 0 4px 12px rgba(120,100,170,.10);
+}
+
+/* ===== 我们的 App ===== */
+.section-title { margin: 18px 0 26px; }
+.section-title h2 { font-family: var(--font-display); font-size: clamp(22px, 3.2vw, 32px); letter-spacing: -.4px; }
+.apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.app-card {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(120,100,170,.16);
+  border-radius: 24px; padding: 26px;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  text-decoration: none;
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+}
+.app-card::before { /* 顶部彩色渐变带 */
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: var(--accent, linear-gradient(90deg,#22D3EE,#6366F1));
+}
+.app-card:hover { transform: translateY(-6px) scale(1.01); border-color: rgba(120,100,170,.32); box-shadow: 0 22px 48px -18px var(--glow, rgba(120,100,170,.5)); }
+.app-card .app-icon {
+  width: 66px; height: 66px; border-radius: 18px; margin-bottom: 18px;
+  box-shadow: 0 8px 20px -6px rgba(90,70,150,.45);
+}
+.app-card h3 { font-family: var(--font-display); font-size: 21px; letter-spacing: -.2px; }
+.app-card p { color: var(--dim); font-size: 14.5px; margin-top: 6px; }
+.app-card .arrow { margin-top: auto; padding-top: 18px; font-weight: 800; font-size: 17px; background: linear-gradient(90deg,#F43F5E,#A855F7); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.app-card[data-tone="teal"] { --accent: linear-gradient(90deg,#2DD4BF,#22D3EE,#6366F1); --glow: rgba(34,211,238,.45); }
+.app-card[data-tone="coral"] { --accent: linear-gradient(90deg,#FBBF24,#FB7185,#A855F7); --glow: rgba(251,113,133,.42); }
+
+/* ===== 页脚 ===== */
+.footer { margin-top: 74px; padding: 30px 0 34px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer-copy { color: var(--dim); font-size: 13px; }
-
-@media (max-width: 720px) {
-  .features { padding: 40px 0; }
-}
+.footer a.github { color: var(--dim); text-decoration: none; font-size: 13px; }
+.footer a.github:hover { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -93,6 +144,11 @@ a { color: inherit; }
   <div class="container">
     <h1>iwonderland</h1>
     <p class="sub">Handcrafted apps for everyday life.</p>
+    <div class="sparkle">
+      <span class="chip">📱 用心做 App</span>
+      <span class="chip">🌏 中 / 日 / 英</span>
+      <span class="chip">🛡️ 隐私优先 · 无广告</span>
+    </div>
   </div>
 </header>
 
@@ -102,13 +158,13 @@ a { color: inherit; }
       <h2 data-i18n="home_apps">我们的 App</h2>
     </div>
     <div class="apps-grid">
-      <a href="floatprompt/index.html" class="app-card">
+      <a href="floatprompt/index.html" class="app-card" data-tone="teal">
         <img src="assets/img/logo.png" alt="FloatPrompt" class="app-icon">
         <h3>FloatPrompt</h3>
         <p data-i18n="home_card_desc">AI 语音跟随提词器，全屏与悬浮双模式。</p>
         <span class="arrow">→</span>
       </a>
-      <a href="subfolks/index.html" class="app-card">
+      <a href="subfolks/index.html" class="app-card" data-tone="coral">
         <img src="assets/img/subfolks_logo.png" alt="Subfolks" class="app-icon">
         <h3>Subfolks</h3>
         <p data-i18n="sub_card_desc">全家订阅账单，一处管好。扣费前提醒，不再多花钱。</p>
@@ -120,8 +176,8 @@ a { color: inherit; }
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div>© 2026 iwonderland</div>
-    <a href="https://github.com/iwonderland" target="_blank" style="color:var(--dim);text-decoration:none;font-size:13px" data-i18n="nav_github">GitHub</a>
+    <div class="footer-copy">© 2026 iwonderland</div>
+    <a class="github" href="https://github.com/iwonderland" target="_blank" data-i18n="nav_github">GitHub</a>
   </div>
 </footer>
 

@@ -132,8 +132,7 @@
 
     // ---- Hero ----
     sub_hero_badge: { zh: '管理全家的订阅', ja: '家族のサブスク管理', en: 'Manage every subscription' },
-    sub_hero_title1: { zh: '订阅再多，', ja: 'サブスクが増えても、', en: 'No matter how many' },
-    sub_hero_title2: { zh: '心里有数', ja: '見落としなし', en: 'subscriptions you have' },
+    sub_hero_title: { zh: '订阅再多，心里有数', ja: '増えても、見逃さない', en: 'So many subscriptions, always in control' },
     sub_hero_sub: { zh: '和家人一起管理订阅账单：到期前自动提醒、按真实货币记账、小组件一眼看清，避免忘了取消而白扣钱。', ja: '家族でサブスク料金を管理。更新日前に通知、本来の通貨で記録、ウィジェットで一目瞭然。解約し忘れによるムダな課金を防ぎます。', en: 'Track subscriptions together with your family — automatic charge reminders, real-currency records, widgets at a glance, so you never pay for what you forgot to cancel.' },
 
     // ---- 特性 ----
@@ -193,7 +192,7 @@
     sub_terms_s11_title: { zh: '11. 终止与数据删除', ja: '11. 終了とデータ削除', en: '11. Termination & Deletion' },
     sub_terms_s11_body: { zh: '您可以随时停止使用并删除本应用。删除应用将移除本机数据；若开启了 iCloud 同步，您可在删除前在应用内关闭同步或删除相关记录以清理云端副本。若您严重违反本协议，我们保留终止您使用本应用的权利。', ja: 'お客様はいつでも本アプリの利用を停止し、削除できます。アプリの削除により端末内のデータは削除されます。iCloud 同期を有効にしている場合は、削除前にアプリ内で同期をオフにするか関連記録を削除して、クラウド上のコピーを整理できます。本規約に重大な違反があった場合、当方は本アプリの利用を終了させる権利を留保します。', en: 'You may stop using and delete the App at any time. Deleting the App removes local data; if iCloud sync is enabled, you can disable sync or delete records in the App beforehand to clean up cloud copies. If you materially breach these Terms, we reserve the right to terminate your access.' },
     sub_terms_s12_title: { zh: '12. 适用法律与变更', ja: '12. 準拠法と変更', en: '12. Governing Law & Changes' },
-    sub_terms_s12_body: { zh: '本协议受适用法律管辖。我们可能不时更新本协议，重要变更会在应用内提示；您在本协议更新后继续使用本应用，即表示接受更新后的条款。如对本协议有疑问，请联系：support@subfolks.app', ja: '本規約は適用法令に準拠します。当方は本規約を随時更新することがあり、重要な変更はアプリ内でお知らせします。更新後も本アプリを継続利用した場合、更新後の条項に同意したものとみなされます。ご質問は support@subfolks.app まで。', en: 'These Terms are governed by applicable law. We may update these Terms from time to time, notifying material changes in the App; continued use after an update constitutes acceptance. Questions: support@subfolks.app' },
+    sub_terms_s12_body: { zh: '本协议受适用法律管辖。我们可能不时更新本协议，重要变更会在应用内提示；您在本协议更新后继续使用本应用，即表示接受更新后的条款。如对本协议有疑问，请联系：app-feedback-2026@outlook.com', ja: '本規約は適用法令に準拠します。当方は本規約を随時更新することがあり、重要な変更はアプリ内でお知らせします。更新後も本アプリを継続利用した場合、更新後の条項に同意したものとみなされます。ご質問は app-feedback-2026@outlook.com まで。', en: 'These Terms are governed by applicable law. We may update these Terms from time to time, notifying material changes in the App; continued use after an update constitutes acceptance. Questions: app-feedback-2026@outlook.com' },
 
     // ---- 隐私政策（Subfolks）----
     sub_privacy_title: { zh: '隐私政策', ja: 'プライバシーポリシー', en: 'Privacy Policy' },
@@ -222,7 +221,7 @@
     sub_privacy_s11_title: { zh: '11. 政策变更', ja: '11. ポリシーの変更', en: '11. Changes to This Policy' },
     sub_privacy_s11_body: { zh: '我们可能不时更新本隐私政策。如有重大变更，我们将在应用内提示并在此页面注明更新日期。更新后的政策自发布之时生效。', ja: '当方は本プライバシーポリシーを随時更新することがあります。重要な変更がある場合はアプリ内でお知らせし、このページに更新日を記載します。更新後のポリシーは公開時点で有効となります。', en: 'We may update this Privacy Policy from time to time. If there are material changes, we will notify you in the App and note the revision date on this page. The updated policy takes effect upon publication.' },
     sub_privacy_s12_title: { zh: '12. 联系我们', ja: '12. お問い合わせ', en: '12. Contact Us' },
-    sub_privacy_s12_body: { zh: '如对本政策或您的数据有任何疑问，请联系：support@subfolks.app，或通过 GitHub：https://github.com/iwonderland', ja: '本ポリシーまたはお客様のデータについてご質問がある場合は、support@subfolks.app または GitHub（https://github.com/iwonderland）までお問い合わせください。', en: 'If you have any questions about this policy or your data, contact us at support@subfolks.app or via GitHub: https://github.com/iwonderland' },
+    sub_privacy_s12_body: { zh: '如对本政策或您的数据有任何疑问，请联系：app-feedback-2026@outlook.com，或通过 GitHub：https://github.com/iwonderland', ja: '本ポリシーまたはお客様のデータについてご質問がある場合は、app-feedback-2026@outlook.com または GitHub（https://github.com/iwonderland）までお問い合わせください。', en: 'If you have any questions about this policy or your data, contact us at app-feedback-2026@outlook.com or via GitHub: https://github.com/iwonderland' },
     privacy_s12_body: { zh: '如对本隐私政策有任何疑问，请联系我们：app-feedback-2026@outlook.com，或通过 GitHub：https://github.com/iwonderland', ja: '本プライバシーポリシーについてご質問がある場合は、app-feedback-2026@outlook.com または GitHub（https://github.com/iwonderland）までお問い合わせください。', en: 'If you have any questions about this policy, please contact us at app-feedback-2026@outlook.com or via GitHub: https://github.com/iwonderland' },
   };
 

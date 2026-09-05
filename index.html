@@ -9,50 +9,75 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
 <style>
-/* 产品集合网格 */
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--sp-6);
-  margin-top: var(--sp-10);
+/* ===== iwonderland 官网集合 · 独立视觉 =====
+   深空调集合页，与各 App 自身页面配色互不影响 */
+:root {
+  --bg: #0E0F13;
+  --panel: #17181E;
+  --panel-2: #1E2028;
+  --line: rgba(255,255,255,.08);
+  --text: #F0EDE6;
+  --dim: #9A968E;
+  --accent: #B9A06A;   /* 暖金，集合站专属 */
+  --radius: 18px;
+  --font-body: 'Inter','Noto Sans SC','Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --font-display: 'Space Grotesk','Inter',system-ui,sans-serif;
 }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.container { width: min(1080px, 92%); margin-inline: auto; }
+a { color: inherit; }
+
+/* 导航 */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(14,15,19,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; gap: 18px; padding: 13px 0; flex-wrap: wrap; }
+.nav-brand { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: .2px; text-decoration: none; }
+.nav-links { margin-left: auto; }
+.nav-links a { color: var(--dim); text-decoration: none; font-size: 14px; }
+.nav-links a:hover { color: var(--text); }
+.lang-switcher { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+.lang-switcher button { border: 0; background: transparent; color: var(--dim); font-size: 12.5px; padding: 5px 11px; border-radius: 999px; cursor: pointer; font-family: var(--font-body); }
+.lang-switcher button.active { background: var(--accent); color: #171309; }
+
+/* Hero */
+.hero { text-align: center; padding: 88px 0 64px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(34px, 6vw, 54px); letter-spacing: -.5px; }
+.hero .sub { margin-top: 14px; color: var(--dim); font-size: 16px; }
+
+/* 我们的 App */
+.section-title { margin-bottom: 30px; }
+.section-title h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); letter-spacing: -.3px; }
+.apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
 .app-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--sp-8);
-  text-decoration: none;
-  color: var(--text);
-  transition: all var(--dur) var(--ease);
-  display: block;
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 26px; text-decoration: none;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.app-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
-  text-decoration: none;
+.app-card:hover { transform: translateY(-4px); border-color: rgba(185,160,106,.45); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.app-card .app-icon { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 18px; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+.app-card h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -.2px; }
+.app-card p { color: var(--dim); font-size: 14.5px; margin-top: 6px; }
+.app-card .arrow { margin-top: auto; padding-top: 16px; color: var(--accent); font-weight: 700; }
+
+/* 页脚 */
+.footer { border-top: 1px solid var(--line); margin-top: 72px; padding: 28px 0; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-copy { color: var(--dim); font-size: 13px; }
+
+@media (max-width: 720px) {
+  .features { padding: 40px 0; }
 }
-.app-card .app-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  margin-bottom: var(--sp-5);
-  box-shadow: var(--shadow-sm);
-}
-.app-card h3 { font-size: 20px; margin-bottom: var(--sp-3); color: var(--text); }
-.app-card p { color: var(--text-dim); font-size: 15px; }
-.app-card .arrow { color: var(--brand); font-weight: 700; margin-top: var(--sp-4); display: inline-block; }
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-brand">
-      <span>iwonderland</span>
-    </a>
+    <a href="index.html" class="nav-brand">iwonderland</a>
     <div class="nav-links">
       <a href="https://github.com/iwonderland" target="_blank" data-i18n="nav_github">GitHub</a>
     </div>
@@ -66,8 +91,8 @@
 
 <header class="hero">
   <div class="container">
-    <h1 style="font-size:clamp(30px,5vw,44px)">iwonderland</h1>
-    <p class="sub">Handcrafted apps for creators.</p>
+    <h1>iwonderland</h1>
+    <p class="sub">Handcrafted apps for everyday life.</p>
   </div>
 </header>
 
@@ -95,8 +120,8 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="nav-brand"><span>iwonderland</span></div>
-    <div class="footer-copy">© 2026 iwonderland</div>
+    <div>© 2026 iwonderland</div>
+    <a href="https://github.com/iwonderland" target="_blank" style="color:var(--dim);text-decoration:none;font-size:13px" data-i18n="nav_github">GitHub</a>
   </div>
 </footer>
 

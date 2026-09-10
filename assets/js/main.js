@@ -265,7 +265,15 @@
       if (titleKey) document.title = window.i18n.t(titleKey.getAttribute('content'));
     },
     detect: function () {
-      // 1. localStorage 优先
+      // 1. URL 参数最优先：App 内打开协议页时会带上 ?lang=xx，
+      //    以 App 当前语言为准（网页无从得知用户在 App 里选了什么语言）。
+      //    同时写入 localStorage，这样站内跳转（条款↔隐私）不会丢掉语言。
+      var q = new URLSearchParams(location.search).get('lang');
+      if (q && SUPPORTED.indexOf(q) >= 0) {
+        localStorage.setItem('qs_lang', q);
+        return q;
+      }
+      // 2. localStorage
       var saved = localStorage.getItem('qs_lang');
       if (saved && SUPPORTED.indexOf(saved) >= 0) return saved;
       // 2. 浏览器语言
